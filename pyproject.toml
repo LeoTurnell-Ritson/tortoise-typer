@@ -10,6 +10,9 @@ dependencies = [
 	"tortoise-orm>=0.7.0",
 ]
 
+[project.urls]
+Repository = "https://github.com/LeoTurnell-Ritson/tortoise-typer"
+
 [build-system]
 requires = ["setuptools", "wheel", "build"]
 build-backend = "setuptools.build_meta"
