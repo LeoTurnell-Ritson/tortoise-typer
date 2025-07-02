@@ -1,0 +1,52 @@
+[project]
+name = "tortoise_typer"
+version = "0.1.0"
+description = "A command line interface for Tortoise ORM"
+authors = [{ name = "Leo Turnell-Ritson", email = "l.turnell.ritson@gmail.com" }]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+	"typer>=0.12.3"
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build]
+packages = ["tortoise_typer"]
+
+[project.optional-dependencies]
+test = [
+	"tortoise-orm>=0.7.0",
+]
+
+lint = [
+	"ruff>=0.12.0",
+]
+
+[tool.ruff]
+line-length = 88
+preview = true
+
+[tool.ruff.lint]
+select = [
+	"F",
+	"E",
+	"W",
+	"I",    # Isort
+	"D",    # pydocstyle
+	"DOC",  # docstrings
+	"B",    # Python bugbear
+	"N",    # Naming conventions
+	"ANN",  # Type annotations
+]
+
+ignore = [
+ 	"D100",  # Ignore missing module docstring
+	"D104",  # Ignore missing docstring in __init__.py
+	"D107",  # Ignore missing docstring in __init__ method
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
